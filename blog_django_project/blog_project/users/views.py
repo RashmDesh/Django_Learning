@@ -8,3 +8,7 @@ def index(request):
 def contact(request):
     return render(request,"contact.html")
 
+def result(request):
+    data= request.POST.get('email')
+    context= {'data':data}
+    return render(request,"result.html",context)

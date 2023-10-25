@@ -32,7 +32,8 @@
 	<center>
 <div class="container">
 	<h2>User Login</h2>
-	<form action="/login" method="post">
+	<form action="/result/" method="POST">
+		{% csrf_token %}
 	    {% if mesage is defined and mesage %}
 			<div class="alert alert-warning">{{ mesage }}</div>
 		{% endif %}
@@ -45,7 +46,7 @@
 			<label for="pwd">Password</label>
 			<input type="password" class="form-control" id="password" name="password" placeholder="Enter password" name="pswd">
 		</div>    
-		<button type="submit" class="btn btn-primary">Login</button>
+		<button type="submit" class="btn btn-primary"   href="/result/">Login</button>
 		<p class="bottom">Dont't have an account?  <a class="bottom" href="/login/register/"> Register here</a></p>
 	</center>
 	</form>
